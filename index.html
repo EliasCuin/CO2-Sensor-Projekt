@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+    <!--Schrift und Zeichenkodierung-->
+    <head><meta charset="utf-8"/> <style>body {font-family: system-ui, sans-serif;}</style></head> <!--change default font-->
+
+    <!--Cloudfare styles für bestimmte -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="header.css">
+
+    
+
+    <header>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>mabyst | made by students  </title>
+        <div class="container">
+
+          <div id="top header">
+            <div style="display: flex;">
+              <h1 style="margin-left: 30px;"> made by students  </h1>
+
+              <div style="margin-top: 30px; margin-left: 20px; display: flex;">
+                <a href="#" style="color: white;margin-left: 20px; text-decoration: none;">Home</a>
+
+                <div class="dropdown" style="margin-left: 20px; margin-top: -13px;">
+                  <button class="dropbtn">Produkte
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#">CO<sub>2</sub> Sensor</a> 
+                  </div>
+                </div> 
+
+                <a href="#" style="color: white; margin-left: 20px;text-decoration: none;">Kaufen</a>
+
+                <a href="#" style="color: white; margin-left: 20px;text-decoration: none;">Hilfe  </a>
+              </div>
+            </div>
+            
+          </div>
+
+          <nav>
+            <a href="#">(Irgendwas)</a>
+            <a href="#">(Über uns)</a>
+            <a href="#">Sophie-Scholl-Schule</a>
+          </nav>
+        </div>
+      </header>
+
+      <p style="color: white; margin-left: 20px;">CO<sub>2</sub> Sensor kaufen</p>
+      <div style="margin-left: 20px; color: white; background-color: white; width: auto; margin-right: 60px; height: 1px;"></div>
+      
+      <div class ="l1" style="display: flex;">
+
+
+        <div class="left">
+          <p class="leftTitle">Ihre Daten:</p>
+
+          <div class="fieldCon">
+            <p class="fieldNote">Name:</p>
+            <input class="input" type="text" placeholder="Ihr Name" ></input>
+          </div>
+          <div class="fieldCon">
+            <p class="fieldNote">Email*:</p>
+            <input class="input" type="email"placeholder="Ihre Email"></input>
+          </div>
+          <div class="fieldCon">
+            <p class="fieldNote">Anschrift*:</p>
+            <input class="input" type="text"placeholder="Straße, Hausnummer, Postleitzahl"></input>
+          </div>
+          <div class="fieldCon" style="display: block;">
+            <p class="fieldNote">Versandart/Abholung*:</p>
+
+            <div style="display: flex;">
+
+              <div class="versandButton" id="dhl_button" style=" border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
+                <img src="./img/LOGO_DHL.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
+                <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
+                  <div></div>
+                </div> </div>
+             </div>
+
+             <div class="versandButton" id="post_button" style="margin-left: 20px; border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
+              <img src="./img/LOGO_POST.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
+              <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
+                <div></div>
+              </div> </div>
+           </div>
+
+           <div class="versandButton" id="selbstabholung_button" style="margin-left: 20px; border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
+            <b style="margin-top: 20px; margin-left: 30px; margin-right: 10px; pointer-events: none;" onselectstart="return false">Selbstabholung</b>
+            <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
+              <div></div>
+            </div> </div>
+         </div>
+
+
+
+            </div>
+
+            
+
+           
+
+            <!--<input class="input" type="text"placeholder="Versandart oder Abholung"></input>-->
+
+
+          </div>
+          <div style="margin-top: 50px;margin-bottom: 45px; margin-left: 40px;position: relative;">
+            <p class="fieldNote">Bezahlart*:</p>
+            <div style="display: flex;">
+              
+              <div class="payButtons"; id="payButtonPaypal" style="border-radius: 10px; background-color: #525050;width:220px; height: 55px;  display: flex;">
+                 <img src="./img/paypalLogo.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
+                 <div style="pointer-events: none; border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
+                   <div></div>
+                 </div> </div>
+              </div>
+              
+              <div class="payButtons"; id="payButtonBank" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
+                 <img src="./img/bankTransfer.png" style="margin-left: 10px; margin-top: 6px; width: 150px; height: 50px; pointer-events: none;"></img> 
+                 <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px; pointer-events: none;">
+                  <div ></div>
+                </div>
+              </div>
+
+              <div class="payButtons"; id="payButtonBar" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
+                <img src="./img/BAR.png" style="margin-left: 5px; margin-top: 6px; width: 50px; height: 50px; pointer-events: none;"></img> 
+                <b style="margin-top: 20px; margin-left: 5px; color: white; pointer-events: none;"onselectstart="return false">Bar bezahlung</b>
+                <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 10px; border-width: 2px; pointer-events: none;">
+                 <div ></div>
+               </div>
+             </div>
+
+            </div>
+            
+          </div>
+
+          
+        </div> 
+        <div style="float: right; margin-left: 100px; margin-top: 50px; color: white; background-color: white; width: 1px; margin-right: 60px; height: 600px;"></div>
+
+        <div class="right">
+          <p class="rightTitle">Ihre Konfiguration:</p>
+          
+
+          <div class="fieldCon">
+            <p class="fieldNote">Größe der Box:</p>
+            
+            <div class="payButtons"; id="payButtonBar" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
+              <b style="margin-top: 20px; margin-left: 50px; color: white; pointer-events: none;"onselectstart="return false">Klein</b>
+              <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 10px; border-width: 2px; pointer-events: none;">
+               <div ></div>
+             </div>
+           </div>
+
+           <div class="payButtons"; id="payButtonBar" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 500px; display: flex; position: absolute; ">
+            <b style="margin-top: 20px; margin-left: 50px; color: white; pointer-events: none;"onselectstart="return false">Groß</b>
+            <div style="border-color: #ffffff; border-style: solid;float:right; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+             <div ></div>
+           </div>
+         </div>
+
+            <div></div>
+          </div>
+
+          <div class="fieldCon">
+            <p class="fieldNote">Farbe:</p>
+          </div>
+          <div class="fieldCon">
+            <p class="fieldNote">Gravierung:</p>
+          </div>
+          <div class="fieldCon">
+            <p class="fieldNote">Art des Outputs:</p>
+          </div>
+          <div class="fieldCon">
+            <p class="fieldNote">Speichern auf SD Karte </p>
+            
+          </div>
+
+          
+          <div class="con2">
+            <p style="text-align: center; color: white; margin-bottom: 0;">Versand und Preis:</p>
+            <div style="margin-left: 20px; position: absolute; color: white; background-color: white; width: 300px; height: 2px; margin-top: 10px;"></div>
+
+            <p style="color: white; margin-left: 16px; margin-top: 20px;">Lieferzeit:</p>  
+
+            <p style="color: white; margin-left: 16px; margin-top: 20px;">Preis (zzgl. <a href="">Versand</a>, inkl. Steuern): 500,99€</p>  
+          </div>
+        </div>
+      </div>
+
+
+      <ul style="color: white; border-color: white; margin-top:5px; margin-left: 450px;">
+        <li>TODO LIST:
+            <ul>
+              <li> <s>Hilfe in nav Bar </s> </li>
+               <li><s>Bar bezahlung Button</s></li>
+               <li><s>Impressum Button in der Mitte unten</s></li>
+                <li>Buttons in "Ihre Konfiguration"</li>                  
+                <li>Keine Bugs wenn man zommt und dann nach rechts/links scrollt"</li>
+                <li>Attraktiveres und bugfreies Dropdown unter "Produkte"</li>
+                <li>Anzeige der derzeitigen Seite in der nav bar  -> Vielleicht durch ergraung des textes"</li>
+                <li>On:Hover events in nav bar "</li>
+                <li>(Vielleicht mobile Ansicht)</li>
+            </ul>
+        </li>
+    </ul>
+
+
+      <footer> <p><a href="irgendwohin" id = "fo">Impressum</a></p> </footer>     
+
+
+
+</html>
+
+<script>
+
+document.getElementById("payButtonBar").lastElementChild.firstElementChild.classList.toggle("inlineBlue")
+
+document.getElementById("payButtonBank").classList.toggle("payButtonBank");
+document.getElementById("selbstabholung_button").lastElementChild.firstElementChild.classList.toggle("inlineRed");
+
+document.addEventListener("DOMContentLoaded", function(){
+  document.body.addEventListener('click', function(e){
+    
+
+    // pay Buttons
+    if(e.target && e.target.className == "payButtons" || e.target.id == "payButtonBank"){
+      document.getElementById("payButtonBank").lastElementChild.firstElementChild.classList.remove("inlineBlue")
+      document.getElementById("payButtonPaypal").lastElementChild.firstElementChild.classList.remove("inlineBlue")
+      document.getElementById("payButtonBar").lastElementChild.firstElementChild.classList.remove("inlineBlue")
+      e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+    }
+    
+
+    if(e.target && e.target.className == "versandButton"){
+
+      document.getElementById("dhl_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
+      document.getElementById("post_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
+      document.getElementById("selbstabholung_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
+
+      e.target.lastElementChild.firstElementChild.classList.toggle("inlineRed");
+
+
+    }
+
+  });
+
+  
+});
+        
+
+</script>
+
+
+<style>
+
+
+
+/* Dropodown */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  
+  background-color: #35424a;
+  /* background-color: #35424a; Header Farbe */
+  
+  border-radius: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(156, 155, 155);
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -------------- ^ Dropdown Stuff ------*/
+
+.inlineBlue{
+  background-color:#77B5FE; margin-left: 2px; margin-top: 2px; width: 15px; height: 14px; border-radius: 100%;
+}
+
+.inlineRed{
+  background-color:#fc0000; margin-left: 2px; margin-top: 2px; width: 15px; height: 14px; border-radius: 100%;
+}
+
+.versandButton:hover{
+  cursor: pointer;  
+}
+
+.versandButton:hover{
+  opacity: 50%;
+}
+
+.payButtons:hover{
+  cursor: pointer;  
+}
+
+
+#payButtonBank:hover{background-color:  #444343 !important; }
+#payButtonPaypal:hover{background-color:  #444343 !important; }
+
+.payButtons:focus{
+  background-color: #ff0707 !important;
+}
+
+.con2{
+  float: left;
+  position: absolute;
+  top: 525px;
+  left: 1450px;
+  background-color: rgb(80, 77, 77);
+  width: 350px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.input{
+  font-size: 20px;
+    left: 400px;
+    width: 325px;
+    height: 40px;
+    background-color: #525050;
+    position:absolute;
+    border-radius: 8px;
+    border-width: 0;
+    color: white;
+    outline: none;
+    
+}
+
+.input:focus{
+  border-width: 0;
+}
+
+.leftTitle{
+  margin-left:40px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.rightTitle{
+  margin-left: 40px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.fieldCon{
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 45px; 
+  margin-left: 40px;
+  position: relative;
+}
+
+.fieldNote{
+  color: white;
+}
+
+.l1{
+  position: relative;
+   margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 70px;
+    background-color: rgb(51, 51, 51);
+    color: rgb(28, 27, 27);
+    height: 700px;
+    width: 1820px;
+    border-radius: 10px;
+  
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0;
+  overflow: hidden;
+  padding:0;
+}
+
+
+body{
+    background-color: #2b2b2b;
+    color: #3f3e3e;
+    margin: 0 ;
+}
+
+  
+</style>
