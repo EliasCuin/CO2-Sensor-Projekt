@@ -59,15 +59,15 @@
 
           <div class="fieldCon">
             <p class="fieldNote">Name:</p>
-            <input class="input" type="text" placeholder="Ihr Name" ></input>
+            <input class="input" style="left: 400px;" type="text" placeholder="Ihr Name" ></input>
           </div>
           <div class="fieldCon">
             <p class="fieldNote">Email*:</p>
-            <input class="input" type="email"placeholder="Ihre Email"></input>
+            <input class="input" style="left: 400px;" type="email"placeholder="Ihre Email"></input>
           </div>
           <div class="fieldCon">
             <p class="fieldNote">Anschrift*:</p>
-            <input class="input" type="text"placeholder="Straße, Hausnummer, Postleitzahl"></input>
+            <input class="input" style="left: 400px;" type="text"placeholder="Straße, Hausnummer, Postleitzahl"></input>
           </div>
           <div class="fieldCon" style="display: block;">
             <p class="fieldNote">Versandart/Abholung*:</p>
@@ -167,16 +167,67 @@
 
           <div class="fieldCon">
             <p class="fieldNote">Farbe:</p>
-          </div>
+            
+            <div class="colorButtons"; id="schwarz" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
+              <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Schwarz</b>
+              <div style="border-color: #ffffff; border-style: solid; width: 19px; margin-left: 35px; border-radius: 100%; height: 18px; margin-top: 17px ;border-width: 2px; pointer-events: none;">
+               <div ></div>
+             </div>
+           </div>
+
+           <div class="colorButtons"; id="grau" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 450px; display: flex; position: absolute; ">
+            <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Grau</b>
+            <div style="border-color: #ffffff; border-style: solid; margin-left: 35px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+             <div ></div>
+           </div> 
+         </div>
+
+         <div class="colorButtons"; id="weiß" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 650px; display: flex; position: absolute; ">
+          <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Weiß</b>
+          <div style="border-color: #ffffff; border-style: solid; margin-left: 35px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+           <div ></div>
+         </div> 
+       </div>
+         
+         
+        </div>
           <div class="fieldCon">
             <p class="fieldNote">Gravierung:</p>
+            <input style="left: 250px;" class="input" type="text" placeholder="Gravierung" ></input>
           </div>
           <div class="fieldCon">
             <p class="fieldNote">Art des Outputs:</p>
+            <div class="outputMethod"; id="outputLed" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
+              <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">LED</b>
+              <div style="border-color: #ffffff; border-style: solid; width: 19px; margin-left: 115px; border-radius: 100%; height: 18px; margin-top: 17px ;border-width: 2px; pointer-events: none;">
+               <div ></div>
+             </div>
+           </div>
+
+           <div class="outputMethod"; id="outputDisplay" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 500px; display: flex; position: absolute; ">
+            <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Display</b>
+            <div style="border-color: #ffffff; border-style: solid; margin-left: 90px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+             <div ></div>
+           </div> 
+         </div>
+
           </div>
           <div class="fieldCon">
             <p class="fieldNote">Speichern auf SD Karte </p>
-            
+
+            <div class="saveOnSD"; id="sdYes" style="border-radius: 10px;background-color: #525050;width:100px; height: 55px; margin-left:250px; display: flex; position: absolute; ">
+              <b style="margin-top: 20px; margin-left: 20px; color: white; pointer-events: none;"onselectstart="return false">Ja</b>
+              <div style="border-color: #ffffff; border-style: solid; margin-left: 25px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+               <div ></div>
+             </div> 
+           </div>
+           <div class="saveOnSD"; id="sdNo" style="border-radius: 10px;background-color: #525050;width:100px; height: 55px; margin-left:375px; display: flex; position: absolute; ">
+            <b style="margin-top: 20px; margin-left: 20px; color: white; pointer-events: none;"onselectstart="return false">Nein</b>
+            <div style="border-color: #ffffff; border-style: solid; margin-left: 10px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
+             <div ></div>
+           </div> 
+         </div>
+           
           </div>
 
           
@@ -198,7 +249,7 @@
               <li> <s>Hilfe in nav Bar </s> </li>
                <li><s>Bar bezahlung Button</s></li>
                <li><s>Impressum Button in der Mitte unten</s></li>
-                <li>Buttons in "Ihre Konfiguration"</li>                  
+                <li><s>Buttons in "Ihre Konfiguration"</s></li>                  
                 <li>Keine Bugs wenn man zommt und dann nach rechts/links scrollt"</li>
                 <li>Attraktiveres und bugfreies Dropdown unter "Produkte"</li>
                 <li>Anzeige der derzeitigen Seite in der nav bar  -> Vielleicht durch ergraung des textes"</li>
@@ -222,6 +273,9 @@ document.getElementById("payButtonBar").lastElementChild.firstElementChild.class
 document.getElementById("payButtonBank").classList.toggle("payButtonBank");
 document.getElementById("selbstabholung_button").lastElementChild.firstElementChild.classList.toggle("inlineRed");
 document.getElementById("scaleKlein").lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+document.getElementById("schwarz").lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+document.getElementById("outputLed").lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+document.getElementById("sdNo").lastElementChild.firstElementChild.classList.toggle("inlineBlue");
 
 document.addEventListener("DOMContentLoaded", function(){
   document.body.addEventListener('click', function(e){
@@ -248,6 +302,25 @@ document.addEventListener("DOMContentLoaded", function(){
     if(e.target && e.target.className == "scaleButtons"){
       document.getElementById("scaleKlein").lastElementChild.firstElementChild.classList.remove("inlineBlue");
       document.getElementById("scaleGroß").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+
+      e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+    }
+    if(e.target && e.target.className == "colorButtons"){
+      document.getElementById("schwarz").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+      document.getElementById("grau").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+      document.getElementById("weiß").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+
+      e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+    }
+    if(e.target && e.target.className == "outputMethod"){
+      document.getElementById("outputLed").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+      document.getElementById("outputDisplay").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+
+      e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
+    }
+    if(e.target && e.target.className == "saveOnSD"){
+      document.getElementById("sdYes").lastElementChild.firstElementChild.classList.remove("inlineBlue");
+      document.getElementById("sdNo").lastElementChild.firstElementChild.classList.remove("inlineBlue");
 
       e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
     }
@@ -336,14 +409,12 @@ document.addEventListener("DOMContentLoaded", function(){
   opacity: 50%;
 }
 
-.payButtons:hover{
-  cursor: pointer;  
-}
 
-
-#payButtonBank:hover{background-color:  #444343 !important; }
-#payButtonPaypal:hover{background-color:  #444343 !important; }
-.scaleButtons:hover{background-color:  #444343 !important; cursor: pointer;  }
+.payButtons:hover{opacity: 60%; cursor: pointer;  }
+.scaleButtons:hover{opacity: 60%; cursor: pointer;  }
+.colorButtons:hover{opacity: 60%; cursor: pointer; }
+.outputMethod:hover{opacity: 60%; cursor: pointer; }
+.saveOnSD:hover{opacity: 60%; cursor: pointer; }
 
 .payButtons:focus{
   background-color: #ff0707 !important;
@@ -362,7 +433,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 .input{
   font-size: 20px;
-    left: 400px;
     width: 325px;
     height: 40px;
     background-color: #525050;
