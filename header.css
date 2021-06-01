@@ -1,23 +1,4 @@
 
-header {
-    background-color: #35424a;
-    border-bottom: 0px solid #ff0707;
-    color: white;
-    padding-top: 5px;
-    min-height: 70px;
-    
-  }
-  
-nav {
-    margin-bottom: 30px;
-}
-  
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
 #fo { /*css code über footer*/
     position: absolute;
     margin-left: 800px;
