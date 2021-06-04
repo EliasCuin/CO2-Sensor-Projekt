@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./pc.css">
+    <link rel="stylesheet" href="./responsive.css">
 
     <header>
 
@@ -74,7 +76,7 @@
       <p style="color: white; margin-left: 20px; margin-top: 15px;">CO<sub>2</sub> Sensor kaufen</p>
       <div style="margin-left: 20px; color: white; background-color: white; width: auto; margin-right: 60px; height: 1px;"></div>
       
-      <div class ="l1" style="display: flex;">
+      <div class ="l1">
 
 
         <div class="left">
@@ -128,9 +130,9 @@
 
             <!--<input class="input" type="text"placeholder="Versandart oder Abholung"></input>-->
 
-
           </div>
-          <div style="margin-top: 50px;margin-bottom: 45px; margin-left: 40px;position: relative;">
+          <div style="margin-top: 50px;margin-bottom: 45px; margin-left: 40px;position: relative;"> 
+
             <p class="fieldNote">Bezahlart*:</p>
             <div style="display: flex;">
               
@@ -159,11 +161,20 @@
             </div>
             
           </div>
+          
+          <div class="responsiveLine"></div>
+
+          <!--#region-->
 
           
-        </div> 
-        <div style="float: right; margin-left: 100px; margin-top: 50px; color: white; background-color: white; width: 1px; margin-right: 60px; height: 600px;"></div>
 
+          
+          <!-- #endregion -->
+        
+        </div> 
+
+        <div class = "pcLine"></div>
+        
         <div class="right">
           <p class="rightTitle">Ihre Konfiguration:</p>
           
@@ -191,21 +202,21 @@
           <div class="fieldCon">
             <p class="fieldNote">Farbe:</p>
             
-            <div class="colorButtons"; id="schwarz" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
+            <div class="colorButtons"; id="schwarz" style="border-radius: 10px;background-color: #525050;width:160px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
               <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Schwarz</b>
               <div style="border-color: #ffffff; border-style: solid; width: 19px; margin-left: 35px; border-radius: 100%; height: 18px; margin-top: 17px ;border-width: 2px; pointer-events: none;">
                <div ></div>
              </div>
            </div>
 
-           <div class="colorButtons"; id="grau" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 450px; display: flex; position: absolute; ">
+           <div class="colorButtons"; id="grau" style="border-radius: 10px;background-color: #525050;width:160px; height: 55px; margin-left: 420px; display: flex; position: absolute; ">
             <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Grau</b>
             <div style="border-color: #ffffff; border-style: solid; margin-left: 35px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
              <div ></div>
            </div> 
          </div>
 
-         <div class="colorButtons"; id="weiß" style="border-radius: 10px;background-color: #525050;width:170px; height: 55px; margin-left: 650px; display: flex; position: absolute; ">
+         <div class="colorButtons"; id="weiß" style="border-radius: 10px;background-color: #525050;width:160px; height: 55px; margin-left: 590px; display: flex; position: absolute; ">
           <b style="margin-top: 20px; margin-left: 30px; color: white; pointer-events: none;"onselectstart="return false">Weiß</b>
           <div style="border-color: #ffffff; border-style: solid; margin-left: 35px; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; border-width: 2px; pointer-events: none; ">
            <div ></div>
@@ -214,10 +225,7 @@
          
          
         </div>
-          <div class="fieldCon">
-            <p class="fieldNote">Gravierung:</p>
-            <input style="left: 250px;" class="input" type="text" placeholder="Gravierung" ></input>
-          </div>
+
           <div class="fieldCon">
             <p class="fieldNote">Art des Outputs:</p>
             <div class="outputMethod"; id="outputLed" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 250px; display: flex; position: absolute;  ">
@@ -266,21 +274,6 @@
       </div>
 
 
-      <ul style="color: white; border-color: white; margin-top:5px; margin-left: 450px;">
-        <li>TODO LIST:
-            <ul>
-              <li> <s>Hilfe in nav Bar </s> </li>
-               <li><s>Bar bezahlung Button</s></li>
-               <li><s>Impressum Button in der Mitte unten</s></li>
-                <li><s>Buttons in "Ihre Konfiguration"</s></li>                  
-                <li>Keine Bugs wenn man zommt und dann nach rechts/links scrollt"</li>
-                <li>Attraktiveres und bugfreies Dropdown unter "Produkte"</li>
-                <li>Anzeige der derzeitigen Seite in der nav bar  -> Vielleicht durch ergraung des textes"</li>
-                <li>On:Hover events in nav bar "</li>
-                <li>(Vielleicht mobile Ansicht)</li>
-            </ul>
-        </li>
-    </ul>
 
 
       <footer> <p><a href="irgendwohin" id = "fo">Impressum</a></p> </footer>     
@@ -354,131 +347,3 @@ document.addEventListener("DOMContentLoaded", function(){
 });    
 
 </script>
-
-<style>
-
-@media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{ display: none; }
-	.navbar .nav-item:hover .nav-link{   }
-	.navbar .nav-item:hover .dropdown-menu{ display: block; }
-	.navbar .nav-item .dropdown-menu{ margin-top:0; }
-}	
-
-/* Dropodown */
-
-
-
-.inlineBlue{
-  background-color:#77B5FE; margin-left: 2px; margin-top: 2px; width: 11px; height: 11px; border-radius: 100%;
-}
-
-.inlineRed{
-  background-color:#fc0000; margin-left: 2px; margin-top: 2px; width: 11px; height: 11px; border-radius: 100%;
-}
-
-.versandButton:hover{
-  cursor: pointer;  
-}
-
-.versandButton:hover{
-  opacity: 50%;
-}
-
-
-.payButtons:hover{opacity: 60%; cursor: pointer;  }
-.scaleButtons:hover{opacity: 60%; cursor: pointer;  }
-.colorButtons:hover{opacity: 60%; cursor: pointer; }
-.outputMethod:hover{opacity: 60%; cursor: pointer; }
-.saveOnSD:hover{opacity: 60%; cursor: pointer; }
-
-.payButtons:focus{
-  background-color: #ff0707 !important;
-}
-
-.con2{
-  float: left;
-  position: absolute;
-  top: 525px;
-  left: 1450px;
-  background-color: rgb(80, 77, 77);
-  width: 350px;
-  height: 150px;
-  border-radius: 10px;
-}
-
-.input{
-  font-size: 20px;
-    width: 325px;
-    height: 40px;
-    background-color: #525050;
-    position:absolute;
-    border-radius: 8px;
-    border-width: 0;
-    color: white;
-    outline: none;
-    
-}
-
-.input:focus{
-  border-width: 0;
-}
-
-.leftTitle{
-  margin-left:40px;
-  margin-top: 20px;
-  color: white;
-  font-size: 20px;
-}
-
-.rightTitle{
-  margin-left: 40px;
-  margin-top: 20px;
-  color: white;
-  font-size: 20px;
-}
-
-.fieldCon{
-  display: flex;
-  margin-top: 50px;
-  margin-bottom: 45px; 
-  margin-left: 40px;
-  position: relative;
-}
-
-.fieldNote{
-  color: white;
-}
-
-.l1{
-  position: relative;
-   margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 70px;
-    background-color: rgb(51, 51, 51);
-    color: rgb(28, 27, 27);
-    height: 700px;
-    width: 1820px;
-    border-radius: 10px;
-  
-}
-
-
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: 0;
-  overflow: hidden;
-  padding:0;
-}
-
-
-body{
-    background-color: #413e3e;
-    color: #464444;
-    margin: 0 ;
-}
-
-  
-</style>
