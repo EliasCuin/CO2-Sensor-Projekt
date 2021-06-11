@@ -30,3 +30,7 @@ app.get("/login/pwd=1932756210",(req, res) => {res.send('<b> Stats vom Backend m
 app.listen((process.env.PORT || 5000), function(){
     console.log('listening on *:5000');
   });
+
+app.use(function (req,res,next){
+	res.status(404).sendFile(__dirname + "/" + "frontend/404.html");
+});
