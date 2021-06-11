@@ -27,4 +27,4 @@ app.get("/sensor",(req, res) => {res.sendFile(__dirname + "/" + "frontend/co2 Se
 
 app.get("/login/pwd=1932756210",(req, res) => {res.send('<b> Stats vom Backend mabyst server </b>: <br><br> <p>Views seit dem Neustart des Servers:</p> '+tempCounter +'  <p>Letzte registrierte IP-Adresse: <br><br>'+ ip+'</p>');})
 
-app.listen(3000);
+app.listen(5000);
