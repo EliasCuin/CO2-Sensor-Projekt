@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+     <!--Schrift und Zeichenkodierung-->
+     <head><meta charset="utf-8"/> <style>body {font-family: system-ui, sans-serif;}</style></head> <!--change default font-->
+
+     <!--Cloudfare styles für bestimmte -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="header.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+     <header>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+        <title>mabyst | made by students  </title>
+          
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+          <a class="navbar-brand" href="/home"><b>made by students</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Produkte
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Alle Produkte</a>
+            <div class="dropdown-divider"></div>
+  
+            <a class="dropdown-item" href="/sensor">CO<sub>2</sub> Sensor</a>
+          </div>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link " href="/kaufen">Kaufen</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/hilfe">Hilfe</a>
+        </li>
+      </ul>
+       <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Irgendwas
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Über uns
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="https://www.sophie-scholl-schule.eu/">
+                    Sophie-Scholl-Schule
+                  </a>
+              </li>
+          </ul>
+      
+      <span class="navbar-text">
+      </span>
+    </div>
+  </nav>
+        
+        </header>
+        
+
+        <body>
+            <center>
+                <div><img  width="300px" style="margin-top: 200px; width: 75px; height: 75px; margin-bottom: 30px;" src="../com.png"></div> 
+                <img id="rotateCat" width="300px" style="text-align: center;" src="https://slm-assets.secondlife.com/assets/17260454/lightbox/Qw1m1Uvo.jpg?1495314507">
+                <p style="color: white;  font-size: 50px; ">AH! Hier gibt es noch keine Hilfe. </p>
+            </center>   
+            
+
+        </body>
+
+</html>
+
+<style>
+  body{
+          background-color: #413e3e;
+          color: #464444;
+          margin: 0 ;
+      }
+
+      @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+
+    .rotateCatmove {
+
+
+-webkit-animation:spin 2s linear infinite;
+-moz-animation:spin 2s linear infinite;
+animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+}	
+
+</style>
+
+<script type="module">
+    import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+    document.getElementById("rotateCat").addEventListener('click', function(){
+  $("#rotateCat").toggleClass("rotateCatmove");
+  confetti();
+    });
+
+    
+ 
+</script>

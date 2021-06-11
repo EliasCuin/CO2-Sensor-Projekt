@@ -1,0 +1,22 @@
+{
+  "name": "made-by-students-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elias040105/CO2-Sensor-Projekt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elias040105/CO2-Sensor-Projekt/issues"
+  },
+  "homepage": "https://github.com/elias040105/CO2-Sensor-Projekt#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
