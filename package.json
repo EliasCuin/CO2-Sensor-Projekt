@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/elias040105/CO2-Sensor-Projekt#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.6.9"
   }
 }

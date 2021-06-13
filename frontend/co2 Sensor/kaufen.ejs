@@ -89,9 +89,6 @@
           <div class="fieldCon">
             <p class="fieldNote">Name:</p>
 
-            
-            
-          
 
             <input class="input" style="left: 400px;" type="text" placeholder="Ihr Name" ></input>
           </div>
@@ -100,37 +97,16 @@
             <input class="input" style="left: 400px;" type="email"placeholder="Ihre Email"></input>
           </div>
           <div class="fieldCon">
-            <p class="fieldNote">Anschrift*:</p>
-            <input class="input" style="left: 400px;" type="text"placeholder="Straße, Hausnummer, Postleitzahl"></input>
+            <p class="fieldNote">Anschrift *:</p>
+            <input class="input" style="left: 400px; " type="text"placeholder="Straße, Hausnummer, Postleitzahl"></input>
           </div>
           <div class="fieldCon" style="display: block;">
-            <p class="fieldNote">Versandart/Abholung*:</p>
+            <p class="fieldNote">Anmerkungen</p>
             
-            <div style="display: flex;">
+            
+              <input class="input" style="left: 400px; top: 0px; " type="text" placeholder="Ihre Anmerkung(en)" ></input>        
 
-              <div class="versandButton" id="dhl_button" style=" border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
-                <img src="./img/LOGO_DHL.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
-                <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
-                  <div></div>
-                </div> </div>
-             </div>
-
-             <div class="versandButton" id="post_button" style="margin-left: 20px; border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
-              <img src="./img/LOGO_POST.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
-              <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
-                <div></div>
-              </div> </div>
-           </div>   
-           <div class="versandButton" id="selbstabholung_button" style="margin-left: 20px; border-radius: 10px; background-color: #ffcc01;width:220px; height: 55px;  display: flex;">
-            <b style="margin-top: 20px; margin-left: 30px; margin-right: 10px; pointer-events: none;" onselectstart="return false">Selbstabholung</b>
-            <div style="pointer-events: none; border-color: #646464; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
-              <div></div>
-            </div> </div>
-         </div>
-
-
-
-            </div>
+           
 
             
 
@@ -139,29 +115,28 @@
             <!--<input class="input" type="text"placeholder="Versandart oder Abholung"></input>-->
 
           </div>
-          <div style="margin-top: 50px;margin-bottom: 45px; margin-left: 40px;position: relative;"> 
+          <div style="margin-top: 70px;margin-bottom: 45px; margin-left: 40px;position: relative;"> 
 
-            <p class="fieldNote">Bezahlart*:</p>
+            <p class="fieldNote">Zweck:</p>
             <div style="display: flex;">
               
               <div class="payButtons"; id="payButtonPaypal" style="border-radius: 10px; background-color: #525050;width:220px; height: 55px;  display: flex;">
-                 <img src="./img/paypalLogo.png" style="margin-left: 10px; margin-top: 7px; height: 40px; pointer-events: none;"></img> 
-                 <div style="pointer-events: none; border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px;  "> <div>
+                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Privat</b>
+                 <div style="pointer-events: none; border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 125px; border-width: 2px;  "> <div>
                    <div></div>
                  </div> </div>
               </div>
               
               <div class="payButtons"; id="payButtonBank" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
-                 <img src="./img/bankTransfer.png" style="margin-left: 10px; margin-top: 6px; width: 150px; height: 50px; pointer-events: none;"></img> 
-                 <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px; pointer-events: none;">
+                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Gebrauch</b>
+                 <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 100px; border-width: 2px; pointer-events: none;">
                   <div ></div>
                 </div>
               </div>
 
               <div class="payButtons"; id="payButtonBar" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
-                <img src="./img/BAR.png" style="margin-left: 5px; margin-top: 6px; width: 50px; height: 50px; pointer-events: none;"></img> 
-                <b style="margin-top: 20px; margin-left: 5px; color: white; pointer-events: none;"onselectstart="return false">Bar bezahlung</b>
-                <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 10px; border-width: 2px; pointer-events: none;">
+                <b style="margin-top: 15px; margin-left: 5px; color: white; pointer-events: none;"onselectstart="return false">Firma/Unternehmen</b>
+                <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 25px; border-width: 2px; pointer-events: none;">
                  <div ></div>
                </div>
              </div>
@@ -186,7 +161,11 @@
         <div class="right">
           <p class="rightTitle">Ihre Konfiguration:</p>
           
-
+          <div class="fieldCon">
+            <p class="fieldNote">Anzahl:</p>
+            <input class="input" style="left: 400px;" type="text"placeholder="Anzahl"></input>
+          </div>
+          
           <div class="fieldCon">
             <p class="fieldNote">Größe der Box:</p>
             
@@ -340,7 +319,6 @@ $(document).ready(function(){
 document.getElementById("payButtonBar").lastElementChild.firstElementChild.classList.toggle("inlineBlue")
 
 document.getElementById("payButtonBank").classList.toggle("payButtonBank");
-document.getElementById("selbstabholung_button").lastElementChild.firstElementChild.classList.toggle("inlineRed");
 
 document.getElementById("scaleKlein").children[1].firstElementChild.classList.toggle("inlineBlue");
 
@@ -365,15 +343,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
 
-    if(e.target && e.target.className == "versandButton"){
-
-      document.getElementById("dhl_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
-      document.getElementById("post_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
-      document.getElementById("selbstabholung_button").lastElementChild.firstElementChild.classList.remove("inlineRed");
-
-      e.target.lastElementChild.firstElementChild.classList.toggle("inlineRed");
-
-    }
     if(e.target && e.target.className == "scaleButtons"){
       document.getElementById("scaleKlein").children[1].firstElementChild.classList.remove("inlineBlue");
       document.getElementById("scaleGroß").children[1].firstElementChild.classList.remove("inlineBlue");;
