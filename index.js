@@ -4,9 +4,33 @@ var path = require("path");
 var bodyParser = require("body-parser")
 const fs = require('fs');
 
+var dmotivation;
 
 
-var config = require('./website-content.json');
+// ------------- redis ----------------
+const redis = require('redis');
+const client = redis.createClient({
+    host: 'redis-12118.c135.eu-central-1-1.ec2.cloud.redislabs.com',
+    port: 12118,
+    password: 'mabyst13579'
+});
+
+client.on("connect",((error)=>{
+  console.log("connected")
+}))
+client.on('error', err => {
+    console.log('Error ' + err);
+});
+
+
+client.set("channelName","test",redis.print);
+
+client.get("channelName",function(error,res){
+  console.log(res);
+});
+
+//redis--------------------------------
+
 
 app.use(express.static("frontend/co2 Sensor"))
 app.use(express.static("frontend/hilfe"))
@@ -39,31 +63,28 @@ app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sens
      
 app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sensor/kaufen"); })
 
-app.get("/about",(req, res) => {res.render(__dirname + "/" + "frontend/about/about",{
-  motivation:config.motivation
+app.get("/about",(req, res) => {client.get("motivation",function(error,res){dmotivation = res}); res.render(__dirname + "/" + "frontend/about/about",{
+  motivation:dmotivation
 });  })
 
 app.get("/login/pwd=1932756210",(req, res) => {res.send('<b> Stats vom Backend mabyst server </b>: <br><br> <p>Views seit dem Neustart des Servers:</p> '+tempCounter +'  <p>Letzte registrierte IP-Adresse: <br><br>'+ ip+'</p>');})
 
 
-app.get("/aofdhvbawes-dashboard",(req, res) => {res.render(__dirname + "/" + "frontend/frontend-dashboard/modmot",{
-  motivation:config.motivation
+app.get("/aofdhvbawes-dashboard",(req, res) => {client.get("motivation",function(error,res){dmotivation = res});res.render(__dirname + "/" + "frontend/frontend-dashboard/modmot",{
+  motivation:dmotivation
 }) })
+
 
 app.get("/aofdhvbawes-dashboardreg",(req, res) => {res.render(__dirname + "/" + "frontend/frontend-dashboard/modmot") 
 
     if(String(req.query.topic) == "motivation"){
-      config.motivation = String(req.query.text);
-      fs.writeFileSync("website-content.json", JSON.stringify(config));
+
+      client.set("motivation",String(req.query.text),redis.print);
       res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
     }
     else{
       res.send("Made by Students <br> :/ hmmmm Irgendwas ist schiefgelaufen")
     }
-
-    
-
-   
 })
 
 

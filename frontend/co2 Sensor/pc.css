@@ -39,7 +39,7 @@
       .con2{
         float: left;
         position: absolute;
-        top: 525px;
+        top: 550px;
         left: 1450px;
         background-color: rgb(80, 77, 77);
         width: 350px;
@@ -97,7 +97,7 @@
           margin-right: 70px;
           background-color: rgb(51, 51, 51);
           color: rgb(28, 27, 27);
-          height: 700px;
+          height: 725px;
           width: 1820px;
           border-radius: 10px;
           display: flex;
