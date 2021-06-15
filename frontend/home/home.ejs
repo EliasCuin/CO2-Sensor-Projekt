@@ -2,7 +2,7 @@
 
 <html>
      <!--Schrift und Zeichenkodierung-->
-     <head><meta charset="utf-8"/> <style>body {font-family: system-ui, sans-serif;}</style></head> <!--change default font-->
+     <head><meta charset="utf-8"/> <style>body {font-family: "MarianinaWdFYBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif}</style></head> <!--change default font-->
 
      <!--Cloudfare styles für bestimmte -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -75,14 +75,47 @@
         
 
         <body>
-            <center>
-
-                <div><img  width="300px" style="margin-top: 200px; width: 75px; height: 75px; margin-bottom: 30px;" src="../com.png"></div> 
-                <img id="rotateCat" width="300px" style="text-align: center; " src="https://p6.focus.de/img/panorama/id_4089587/sad-cat.jpg?im=Crop%3D%28192%2C0%2C488%2C488%29%3BResize%3D%28548%2C548%29&hash=3b1fe6765b08a3a924edcf9280290aa40c078489b326ecfbf3a31b2cc3677fdc">
-                <p style="color: white;  font-size: 50px; ">:/ Diese Seite ist noch leer</p>
-
+          <div class="hero-image">          
               
-            </center> 
+              
+
+              <div class="hero-text">
+                
+                 <h1><b>Co2 Sensor kaufen</b> </h1>
+                <p>Ein Produkt von Made-by-students</p> 
+                
+                <center>
+
+                      <a href="/sensor" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="vertical-align: middle; background-color: rgb(9, 129, 39); border-color: rgb(41, 102, 10); margin-top: 20px;">Jetzt bestellen!</a>
+
+                    
+                    
+
+                </center>
+                
+                
+            </div>
+          </div> 
+           <h1 style="text-align: center; color: white; margin-top: 20px;"><b>Mehr dazu:</b> </h1>
+           <hr style="color: white; height: 2px; background-color: rgb(7, 158, 12); margin-top: 40px; width: 70%;">
+          <p style="margin-left: 15%; color: white; width: 70%; font-size: 25px;   border-width: 1px;">
+            <b>Co2 Sensor im Klassenzimmer:</b>
+          </p>
+
+          <div style="display: flex; margin-top: 30px;">
+            <p style="margin-left: 15%; color: white; width: 50%; font-size: 20px;   border-width: 1px;">
+              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+            </p>
+            <img src="https://img.br.de/a35d23f6-9f13-49f6-8b14-98ec591a617e.jpeg?q=80&rect=22,333,2978,1674" style="width: 20%; ">
+          
+          </div>
+          <hr style="color: white; height: 2px; background-color: rgb(7, 158, 12); margin-top: 20px; width: 70%;">
+
+
+          
+          </div>
+          
+
             
 
         </body>
@@ -104,24 +137,38 @@
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
 }	
 
-.rotateCatmove {
-
-
-    -webkit-animation:spin 1s linear infinite;
-    -moz-animation:spin 1s linear infinite;
-    animation:spin 1s linear infinite;
+body, html {
+    height: 100%;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-</style>
 
-<script type="module">
-import confetti from 'https://cdn.skypack.dev/canvas-confetti';
-document.getElementById("rotateCat").addEventListener('click', function(){
-  $("#rotateCat").toggleClass("rotateCatmove");
-  confetti();
-    });
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("berlin-top.jpg");
 
+  /* Set a specific height */
+  height: 400px;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute; 
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(41, 102, 10);
+  background-color: #413e3e;
+  background: rgba(255, 255, 255, 0.7);
+  width: 60%;
+  height: 50%;
   
-</script>
+}
+
+</style>
