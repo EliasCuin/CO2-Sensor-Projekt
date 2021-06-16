@@ -121,25 +121,19 @@
             <div style="display: flex;">
               
               <div class="payButtons"; id="payButtonPaypal" style="border-radius: 10px; background-color: #525050;width:220px; height: 55px;  display: flex;">
-                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Privat</b>
-                 <div style="pointer-events: none; border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 125px; border-width: 2px;  "> <div>
+                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Privatgebrauch</b>
+                 <div style="pointer-events: none; border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left:55px; border-width: 2px;  "> <div>
                    <div></div>
                  </div> </div>
               </div>
               
-              <div class="payButtons"; id="payButtonBank" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
-                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Gebrauch</b>
-                 <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 100px; border-width: 2px; pointer-events: none;">
+              <div class="payButtons"; id="payButtonBank" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; margin-right: 250px;">
+                <b style="margin-top: 15px; margin-left: 10px; color: white; pointer-events: none;"onselectstart="return false">Firma/Unternehmen</b>
+                 <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 20px; border-width: 2px; pointer-events: none;">
                   <div ></div>
                 </div>
               </div>
 
-              <div class="payButtons"; id="payButtonBar" style="border-radius: 10px;background-color: #525050;width:220px; height: 55px; margin-left: 20px; display: flex; ">
-                <b style="margin-top: 15px; margin-left: 5px; color: white; pointer-events: none;"onselectstart="return false">Firma/Unternehmen</b>
-                <div style="border-color: #ffffff; border-style: solid; width: 19px; border-radius: 100%; height: 18px; margin-top: 17px ; margin-left: 25px; border-width: 2px; pointer-events: none;">
-                 <div ></div>
-               </div>
-             </div>
 
             </div>
             
@@ -286,7 +280,7 @@
               </button>
             </div>
             <div class="modal-body">
-              Leider wurde die <b>MABYST-Website</b> noch nicht für ihre Auflösung optimiert.
+              Leider wurde die <b>MABYST-Website</b> noch nicht für ihre Auflösung optimisiert.
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -316,7 +310,7 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 });
 
-document.getElementById("payButtonBar").lastElementChild.firstElementChild.classList.toggle("inlineBlue")
+document.getElementById("payButtonPaypal").lastElementChild.firstElementChild.classList.toggle("inlineBlue")
 
 document.getElementById("payButtonBank").classList.toggle("payButtonBank");
 
@@ -338,7 +332,6 @@ document.addEventListener("DOMContentLoaded", function(){
     if(e.target && e.target.className == "payButtons" || e.target.id == "payButtonBank"){
       document.getElementById("payButtonBank").lastElementChild.firstElementChild.classList.remove("inlineBlue")
       document.getElementById("payButtonPaypal").lastElementChild.firstElementChild.classList.remove("inlineBlue")
-      document.getElementById("payButtonBar").lastElementChild.firstElementChild.classList.remove("inlineBlue")
       e.target.lastElementChild.firstElementChild.classList.toggle("inlineBlue");
     }
     
