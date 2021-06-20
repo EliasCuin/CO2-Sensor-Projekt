@@ -88,6 +88,7 @@ app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sens
      
 app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sensor/kaufen"); })
 
+
 app.get("/about",(req, res) => {
   client.get("motivation",function(error,res){dmotivation = res});
   
@@ -146,6 +147,11 @@ app.get("/about",(req, res) => {
 });  })
 
 app.get("/login/pwd=1932756210",(req, res) => {res.send('<b> Stats vom Backend mabyst server </b>: <br><br> <p>Views seit dem Neustart des Servers:</p> '+tempCounter +'  <p>Letzte registrierte IP-Adresse: <br><br>'+ ip+'</p>');})
+
+app.get("/aofdhvbawes-dashboard-1",(req, res) => {
+
+  res.render(__dirname + "/" + "frontend/frontend-dashboard/helpdash")
+})
 
 
 app.get("/aofdhvbawes-dashboard",(req, res) => {
