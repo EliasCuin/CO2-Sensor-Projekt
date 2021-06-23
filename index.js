@@ -3,36 +3,10 @@ const app = express()
 var path = require("path");
 var bodyParser = require("body-parser")
 const fs = require('fs');
+let dm = require("./database_manager.js")
+let vars = require("./variables.js")
 
-// database vars:
-
-var dmotivation;
-
-var mitglied_1_name;
-var mitglied_1_rolle;
-var mitglied_1_text;
-
-var mitglied_2_name;
-var mitglied_2_rolle;
-var mitglied_2_text;
-
-var mitglied_3_name;
-var mitglied_3_rolle;
-var mitglied_3_text;
-
-var mitglied_4_name;
-var mitglied_4_rolle;
-var mitglied_4_text;
-
-var mitglied_5_name;
-var mitglied_5_rolle;
-var mitglied_5_text;
-
-var mitglied_6_name;
-var mitglied_6_rolle;
-var mitglied_6_text;
-
-// ------------- redis ----------------
+// #region redis connect stuff
 const redis = require('redis');
 const client = redis.createClient({
     host: 'redis-12118.c135.eu-central-1-1.ec2.cloud.redislabs.com',
@@ -54,164 +28,178 @@ client.on('error', err => {
 //  console.log(res);
 //});
 
-//redis--------------------------------
+// #endregion
 
-
+//#region app.use and app.set + view engine stuff
+app.use(express.static("frontend"))
 app.use(express.static("frontend/co2 Sensor"))
 app.use(express.static("frontend/hilfe"))
-
-var tempCounter = 0;
-var ip = "Noch keine Adresse Registriert";
-
-app.use(express.static("frontend"))
 
 app.set("view engine","ejs");
 app.set("views", path.join(__dirname,"frontend/frontend-dashboard"));
 app.set("views", path.join(__dirname,"frontend/co2 Sensor"));
 app.set("views", path.join(__dirname,"frontend/hilfe"));
 app.set("views", path.join(__dirname,"frontend"));
+//#endregion
 
+//#region a few variables
+
+var tempCounter = 0;
+var ip = "Noch keine Adresse Registriert";
+
+//#endregion variables
+
+//#region  main pages
 app.get("/",(req, res) => {
     res.render(__dirname + "/" + "frontend/home/home");
     tempCounter++;
     ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 })
 
-app.get("/hilfe",(req, res) => {res.render(__dirname + "/" + "frontend/hilfe/hilfe"); })
+app.get("/hilfe",(req, res) => {
+  res.render(__dirname + "/" + "frontend/hilfe/hilfe",{
+    frage_1:vars.help.frage_1,
+    antwort_1:vars.help.antwort_1,
+
+    frage_2:vars.help.frage_2,
+    antwort_2:vars.help.antwort_2,
+
+    frage_3:vars.help.frage_3,
+    antwort_3:vars.help.antwort_3,
+
+    frage_4:vars.help.frage_4,
+    antwort_4:vars.help.antwort_4,
+
+    frage_5:vars.help.frage_5,
+    antwort_5:vars.help.antwort_5,
+
+    frage_6:vars.help.frage_6,
+    antwort_6:vars.help.antwort_6,
+
+    frage_7:vars.help.frage_7,
+    antwort_7:vars.help.antwort_7,
+
+    frage_8:vars.help.frage_8,
+    antwort_8:vars.help.antwort_8,
+
+    frage_9:vars.help.frage_9,
+    antwort_9:vars.help.antwort_9,
+  }); 
+
+})
      
-app.get("/home",(req, res) => {res.render(__dirname + "/" + "frontend/home/home"); 
-});  
+app.get("/home",(req, res) => {res.render(__dirname + "/" + "frontend/home/home"); });
 
 app.get("/kaufen",(req, res) => {res.render(__dirname + "/" + "frontend/kaufen/kaufen"); })
      
 app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sensor/kaufen"); })
-     
-app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sensor/kaufen"); })
-
 
 app.get("/about",(req, res) => {
-  client.get("motivation",function(error,res){dmotivation = res});
-  
-  client.get("mitglied_1_name",function(error,res){mitglied_1_name = res});
-  client.get("mitglied_1_rolle",function(error,res){mitglied_1_rolle = res});
-  client.get("mitglied_1_text",function(error,res){mitglied_1_text = res});
-
-  client.get("mitglied_2_name",function(error,res){mitglied_2_name = res});
-  client.get("mitglied_2_rolle",function(error,res){mitglied_2_rolle = res});
-  client.get("mitglied_2_text",function(error,res){mitglied_2_text = res});
-
-  client.get("mitglied_3_name",function(error,res){mitglied_3_name = res});
-  client.get("mitglied_3_rolle",function(error,res){mitglied_3_rolle = res});
-  client.get("mitglied_3_text",function(error,res){mitglied_3_text = res});
-
-  client.get("mitglied_4_name",function(error,res){mitglied_4_name = res});
-  client.get("mitglied_4_rolle",function(error,res){mitglied_4_rolle = res});
-  client.get("mitglied_4_text",function(error,res){mitglied_4_text = res});
-
-  client.get("mitglied_5_name",function(error,res){mitglied_5_name = res});
-  client.get("mitglied_5_rolle",function(error,res){mitglied_5_rolle = res});
-  client.get("mitglied_5_text",function(error,res){mitglied_5_text = res});
-  
-  client.get("mitglied_6_name",function(error,res){mitglied_6_name = res});
-  client.get("mitglied_6_rolle",function(error,res){mitglied_6_rolle = res});
-  client.get("mitglied_6_text",function(error,res){mitglied_6_text = res});
-
-  
+  dm.motivationRefresh(client);
   res.render(__dirname + "/" + "frontend/about/about",{
-  motivation:dmotivation,
+  
+  motivation:vars.about.dmotivation,
 
-  mitglied_1_name:mitglied_1_name,
-  mitglied_1_rolle:mitglied_1_rolle,
-  mitglied_1_text:mitglied_1_text,
+  mitglied_1_name:vars.about.mitglied_1_name,         // set variables to html page
+  mitglied_1_rolle:vars.about.mitglied_1_rolle,
+  mitglied_1_text:vars.about.mitglied_1_text,  
 
-  mitglied_2_name:mitglied_2_name,
-  mitglied_2_rolle:mitglied_2_rolle,
-  mitglied_2_text:mitglied_2_text,
+  mitglied_2_name:vars.about.mitglied_2_name,
+  mitglied_2_rolle:vars.about.mitglied_2_rolle,
+  mitglied_2_text:vars.about.mitglied_2_text,
 
-  mitglied_3_name:mitglied_3_name,
-  mitglied_3_rolle:mitglied_3_rolle,
-  mitglied_3_text:mitglied_3_text,
+  mitglied_3_name:vars.about.mitglied_3_name,
+  mitglied_3_rolle:vars.about.mitglied_3_rolle,
+  mitglied_3_text:vars.about.mitglied_3_text,
 
-  mitglied_4_name:mitglied_4_name,
-  mitglied_4_rolle:mitglied_4_rolle,
-  mitglied_4_text:mitglied_4_text,
+  mitglied_4_name:vars.about.mitglied_4_name,
+  mitglied_4_rolle:vars.about.mitglied_4_rolle,
+  mitglied_4_text:vars.about.mitglied_4_text,
 
-  mitglied_5_name:mitglied_5_name,
-  mitglied_5_rolle:mitglied_5_rolle,
-  mitglied_5_text:mitglied_5_text,
+  mitglied_5_name:vars.about.mitglied_5_name,
+  mitglied_5_rolle:vars.about.mitglied_5_rolle,
+  mitglied_5_text:vars.about.mitglied_5_text,
 
-  mitglied_6_name:mitglied_6_name,
-  mitglied_6_rolle:mitglied_6_rolle,
-  mitglied_6_text:mitglied_6_text
+  mitglied_6_name:vars.about.mitglied_6_name,
+  mitglied_6_rolle:vars.about.mitglied_6_rolle,
+  mitglied_6_text:vars.about.mitglied_6_text
 
 });  })
 
+//#endregion
+
+//#region dashboard and website propreties pages
 app.get("/login/pwd=1932756210",(req, res) => {res.send('<b> Stats vom Backend mabyst server </b>: <br><br> <p>Views seit dem Neustart des Servers:</p> '+tempCounter +'  <p>Letzte registrierte IP-Adresse: <br><br>'+ ip+'</p>');})
 
 app.get("/aofdhvbawes-dashboard-1",(req, res) => {
+  dm.helpRefresh(client);
+  res.render(__dirname + "/" + "frontend/frontend-dashboard/helpdash",{
+    frage_1:vars.help.frage_1,
+    antwort_1:vars.help.antwort_1,
 
-  res.render(__dirname + "/" + "frontend/frontend-dashboard/helpdash")
+    frage_2:vars.help.frage_2,
+    antwort_2:vars.help.antwort_2,
+
+    frage_3:vars.help.frage_3,
+    antwort_3:vars.help.antwort_3,
+
+    frage_4:vars.help.frage_4,
+    antwort_4:vars.help.antwort_4,
+
+    frage_5:vars.help.frage_5,
+    antwort_5:vars.help.antwort_5,
+
+    frage_6:vars.help.frage_6,
+    antwort_6:vars.help.antwort_6,
+
+    frage_7:vars.help.frage_7,
+    antwort_7:vars.help.antwort_7,
+
+    frage_8:vars.help.frage_8,
+    antwort_8:vars.help.antwort_8,
+
+    frage_9:vars.help.frage_9,
+    antwort_9:vars.help.antwort_9,
+  } )
 })
 
 
-app.get("/aofdhvbawes-dashboard",(req, res) => {
-  client.get("motivation",function(error,res){dmotivation = res});
+app.get("/aofdhvbawes-dashboard",(req, res) => {  
+  dm.motivationRefresh(client);
   
-  client.get("mitglied_1_name",function(error,res){mitglied_1_name = res});
-  client.get("mitglied_1_rolle",function(error,res){mitglied_1_rolle = res});
-  client.get("mitglied_1_text",function(error,res){mitglied_1_text = res});
-
-  client.get("mitglied_2_name",function(error,res){mitglied_2_name = res});
-  client.get("mitglied_2_rolle",function(error,res){mitglied_2_rolle = res});
-  client.get("mitglied_2_text",function(error,res){mitglied_2_text = res});
-
-  client.get("mitglied_3_name",function(error,res){mitglied_3_name = res});
-  client.get("mitglied_3_rolle",function(error,res){mitglied_3_rolle = res});
-  client.get("mitglied_3_text",function(error,res){mitglied_3_text = res});
-
-  client.get("mitglied_4_name",function(error,res){mitglied_4_name = res});
-  client.get("mitglied_4_rolle",function(error,res){mitglied_4_rolle = res});
-  client.get("mitglied_4_text",function(error,res){mitglied_4_text = res});
-
-  client.get("mitglied_5_name",function(error,res){mitglied_5_name = res});
-  client.get("mitglied_5_rolle",function(error,res){mitglied_5_rolle = res});
-  client.get("mitglied_5_text",function(error,res){mitglied_5_text = res});
-  
-  client.get("mitglied_6_name",function(error,res){mitglied_6_name = res});
-  client.get("mitglied_6_rolle",function(error,res){mitglied_6_rolle = res});
-  client.get("mitglied_6_text",function(error,res){mitglied_6_text = res});
-
   res.render(__dirname + "/" + "frontend/frontend-dashboard/modmot",{
-  motivation:dmotivation,
+  motivation:vars.about.dmotivation,
 
-  mitglied_1_name:mitglied_1_name,
-  mitglied_1_rolle:mitglied_1_rolle,
-  mitglied_1_text:mitglied_1_text,
+  mitglied_1_name:vars.about.mitglied_1_name,
+  mitglied_1_rolle:vars.about.mitglied_1_rolle,
+  mitglied_1_text:vars.about.mitglied_1_text,
   
-  mitglied_2_name:mitglied_2_name,
-  mitglied_2_rolle:mitglied_2_rolle,
-  mitglied_2_text:mitglied_2_text,
+  mitglied_2_name:vars.about.mitglied_2_name,
+  mitglied_2_rolle:vars.about.mitglied_2_rolle,
+  mitglied_2_text:vars.about.mitglied_2_text,
 
-  mitglied_3_name:mitglied_3_name,
-  mitglied_3_rolle:mitglied_3_rolle,
-  mitglied_3_text:mitglied_3_text,
+  mitglied_3_name:vars.about.mitglied_3_name,
+  mitglied_3_rolle:vars.about.mitglied_3_rolle,
+  mitglied_3_text:vars.about.mitglied_3_text,
 
-  mitglied_4_name:mitglied_4_name,
-  mitglied_4_rolle:mitglied_4_rolle,
-  mitglied_4_text:mitglied_4_text,
+  mitglied_4_name:vars.about.mitglied_4_name,
+  mitglied_4_rolle:vars.about.mitglied_4_rolle,
+  mitglied_4_text:vars.about.mitglied_4_text,
 
-  mitglied_5_name:mitglied_5_name,
-  mitglied_5_rolle:mitglied_5_rolle,
-  mitglied_5_text:mitglied_5_text,
+  mitglied_5_name:vars.about.mitglied_5_name,
+  mitglied_5_rolle:vars.about.mitglied_5_rolle,
+  mitglied_5_text:vars.about.mitglied_5_text,
 
-  mitglied_6_name:mitglied_6_name,
-  mitglied_6_rolle:mitglied_6_rolle,
-  mitglied_6_text:mitglied_6_text
+  mitglied_6_name:vars.about.mitglied_6_name,
+  mitglied_6_rolle:vars.about.mitglied_6_rolle,
+  mitglied_6_text:vars.about.mitglied_6_text
+
 }) })
-
 
 app.get("/aofdhvbawes-dashboardreg",(req, res) => {res.render(__dirname + "/" + "frontend/frontend-dashboard/modmot") 
 
+
+//#region about us
     if(String(req.query.topic) == "motivation"){
 
       client.set("motivation",String(req.query.text),redis.print);
@@ -223,8 +211,6 @@ app.get("/aofdhvbawes-dashboardreg",(req, res) => {res.render(__dirname + "/" + 
       client.set("mitglied_1_rolle",String(req.query.rolle),redis.print);
       client.set("mitglied_1_text",String(req.query.text),redis.print);
       //console.log("test :" + String(req.query.text)),
-      
-
       res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
     }
     else if(String(req.query.topic) == "mitglied_2"){
@@ -257,12 +243,61 @@ app.get("/aofdhvbawes-dashboardreg",(req, res) => {res.render(__dirname + "/" + 
       client.set("mitglied_6_text",String(req.query.text),redis.print);
       res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");  
     }
+//#endregion
+//#region help
+    else if(String(req.query.topic) == "question_1"){
+      client.set("frage_1",String(req.query.question),redis.print);
+      client.set("antwort_1",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_2"){
+      client.set("frage_2",String(req.query.question),redis.print);
+      client.set("antwort_2",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_3"){
+      client.set("frage_3",String(req.query.question),redis.print);
+      client.set("antwort_3",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_4"){
+      client.set("frage_4",String(req.query.question),redis.print);
+      client.set("antwort_4",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_5"){
+      client.set("frage_5",String(req.query.question),redis.print);
+      client.set("antwort_5",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_6"){
+      client.set("frage_6",String(req.query.question),redis.print);
+      client.set("antwort_6",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_7"){
+      client.set("frage_7",String(req.query.question),redis.print);
+      client.set("antwort_7",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_8"){
+      client.set("frage_8",String(req.query.question),redis.print);
+      client.set("antwort_8",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
+    else if(String(req.query.topic) == "question_9"){
+      client.set("frage_9",String(req.query.question),redis.print);
+      client.set("antwort_9",String(req.query.answer),redis.print);
+      res.render(__dirname + "/" + "frontend/frontend-dashboard/erfolgreich");
+    }
 
 
+//#endregion
     else{
       res.send("Made by Students <br> :/ hmmmm Irgendwas ist schiefgelaufen")
     }
 })
+//#endregion
 
 
 app.listen((process.env.PORT || 5000), function(){
@@ -272,3 +307,6 @@ app.listen((process.env.PORT || 5000), function(){
 app.use(function (req,res){
 	res.status(404).render(__dirname + "/" + "frontend/404");
 });
+
+
+
