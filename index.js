@@ -90,6 +90,10 @@ app.get("/hilfe",(req, res) => {
      
 app.get("/home",(req, res) => {res.render(__dirname + "/" + "frontend/home/home"); });
 
+app.get("/beispielHome-1",(req, res) => {res.render(__dirname + "/" + "frontend/home/newHome"); });
+
+app.get("/beispielHome-2",(req, res) => {res.send("Es gibt kein noch kein zweites:/") });
+
 app.get("/kaufen",(req, res) => {res.render(__dirname + "/" + "frontend/kaufen/kaufen"); })
      
 app.get("/sensor",(req, res) => {res.render(__dirname + "/" + "frontend/co2 Sensor/kaufen"); })
