@@ -34,12 +34,16 @@ client.on('error', err => {
 app.use(express.static("frontend"))
 app.use(express.static("frontend/co2 Sensor"))
 app.use(express.static("frontend/hilfe"))
+app.use(express.static("frontend/home/newHome2"))
+
 
 app.set("view engine","ejs");
 app.set("views", path.join(__dirname,"frontend/frontend-dashboard"));
 app.set("views", path.join(__dirname,"frontend/co2 Sensor"));
 app.set("views", path.join(__dirname,"frontend/hilfe"));
 app.set("views", path.join(__dirname,"frontend"));
+app.set("views", path.join(__dirname,"frontend/home/newHome2"));
+
 //#endregion
 
 //#region a few variables
@@ -92,7 +96,9 @@ app.get("/home",(req, res) => {res.render(__dirname + "/" + "frontend/home/home"
 
 app.get("/beispielHome-1",(req, res) => {res.render(__dirname + "/" + "frontend/home/newHome"); });
 
-app.get("/beispielHome-2",(req, res) => {res.send("Es gibt kein noch kein zweites:/") });
+app.get("/beispielHome-2",(req, res) => {res.render(__dirname + "/" + "frontend/home/newHome2/home2");});
+
+app.get("/test",(req, res) => {res.render(__dirname + "/" + "frontend/home/newHome2/test");});
 
 app.get("/kaufen",(req, res) => {res.render(__dirname + "/" + "frontend/kaufen/kaufen"); })
      
